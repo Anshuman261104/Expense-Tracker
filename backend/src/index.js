@@ -1,6 +1,18 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
-app.listen(3030,()=>console.log("Server is running on port 3030"));
+app.listen(3030, () => {
+  console.log("🔥 THIS SERVER IS RUNNING ON 3030 🔥");
+});
+
+// database connection
+import mongoose from "mongoose";
+mongoose.connect(process.env.DB_URL)
+.then(()=>console.log("Database connected !"))
+.catch(()=>console.log("Database not connected !"));
+
 
 // app level middleware
 import morgan from "morgan";
