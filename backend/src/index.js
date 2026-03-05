@@ -13,6 +13,8 @@ mongoose.connect(process.env.DB_URL)
 .then(()=>console.log("Database connected !"))
 .catch(()=>console.log("Database not connected !"));
 
+import cookieParser from 'cookie-parser';
+app.use(cookieParser());
 
 // app level middleware
 import morgan from "morgan";
